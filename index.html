@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Scriptoria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Research Scriptoria</h1>
+        <p>Crafting Excellence in Every Word</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <button class="service-button" onclick="selectService('PhD Thesis')">PhD Thesis</button>
+            <button class="service-button" onclick="selectService('Master Thesis')">Master Thesis</button>
+            <button class="service-button" onclick="selectService('Dissertation')">Dissertation</button>
+            <button class="service-button" onclick="selectService('Article')">Article</button>
+            <button class="service-button" onclick="selectService('Research Article')">Research Article</button>
+            <button class="service-button" onclick="selectService('Scopus Level Paper')">Scopus Level Paper</button>
+            <button class="service-button" onclick="selectService('Review Paper')">Review Paper</button>
+            <button class="service-button" onclick="selectService('Literature Report')">Literature Report</button>
+            <button class="service-button" onclick="selectService('Assignment')">Assignment</button>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Your Name" required><br><br>
+            <input type="text" id="phone" placeholder="Your Phone" required><br><br>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea><br><br>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+        <p><strong>Phone:</strong> 9630426118, 8720812750</p>
+        <p><strong>Address:</strong> Virtual Office</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Research Scriptoria. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
