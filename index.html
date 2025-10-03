@@ -5,57 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Scriptoria</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>Research Scriptoria</h1>
-        <p>Crafting Excellence in Every Word</p>
+        <div class="container header-container">
+            <h1>Research Scriptoria</h1>
+            <p>Crafting Excellence in Every Word</p>
+        </div>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <button class="service-button" onclick="selectService('PhD Thesis')">PhD Thesis</button>
-            <button class="service-button" onclick="selectService('Master Thesis')">Master Thesis</button>
-            <button class="service-button" onclick="selectService('Dissertation')">Dissertation</button>
-            <button class="service-button" onclick="selectService('Article')">Article</button>
-            <button class="service-button" onclick="selectService('Research Article')">Research Article</button>
-            <button class="service-button" onclick="selectService('Scopus Level Paper')">Scopus Level Paper</button>
-            <button class="service-button" onclick="selectService('Review Paper')">Review Paper</button>
-            <button class="service-button" onclick="selectService('Literature Report')">Literature Report</button>
-            <button class="service-button" onclick="selectService('Assignment')">Assignment</button>
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <button class="service-button" onclick="selectService('PhD Thesis')">PhD Thesis</button>
+                <button class="service-button" onclick="selectService('Master Thesis')">Master Thesis</button>
+                <button class="service-button" onclick="selectService('Dissertation')">Dissertation</button>
+                <button class="service-button" onclick="selectService('Article')">Article</button>
+                <button class="service-button" onclick="selectService('Research Article')">Research Article</button>
+                <button class="service-button" onclick="selectService('Scopus Level Paper')">Scopus Level Paper</button>
+                <button class="service-button" onclick="selectService('Review Paper')">Review Paper</button>
+                <button class="service-button" onclick="selectService('Literature Report')">Literature Report</button>
+                <button class="service-button" onclick="selectService('Assignment')">Assignment</button>
+            </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Us</h2>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="https://formsubmit.co/researchscriptoria@gmail.com" method="POST">
+                <input type="hidden" name="Selected Service" id="selectedService" value="">
+                <input type="hidden" name="_next" value="https://yourusername.github.io/thankyou.html">
+                <input type="hidden" name="_captcha" value="false">
 
-        <!-- Contact Form with FormSubmit + Redirect -->
-        <form action="https://formsubmit.co/researchscriptoria@gmail.com" method="POST">
-            <!-- Hidden field for selected service -->
-            <input type="hidden" name="Selected Service" id="selectedService" value="">
-            
-            <!-- Redirect after form submit -->
-            <input type="hidden" name="_next" value="https://yourusername.github.io/thankyou.html">
-            <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="text" name="phone" id="phone" placeholder="Your Phone" required>
+                <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
 
-            <input type="text" name="name" id="name" placeholder="Your Name" required><br><br>
-            <input type="text" name="phone" id="phone" placeholder="Your Phone" required><br><br>
-            <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea><br><br>
-            <button type="submit" class="submit-button">Send Message</button>
-        </form>
-
-        <p><strong>Phone:</strong> 7089151560</p>
-        <p><strong>Address:</strong> Virtual Office</p>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> 7089151560</p>
+                <p><strong>Address:</strong> Virtual Office</p>
+            </div>
+        </div>
     </section>
 
     <footer>
