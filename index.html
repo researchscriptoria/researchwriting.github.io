@@ -38,12 +38,22 @@
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <form onsubmit="return validateForm()">
-            <input type="text" id="name" placeholder="Your Name" required><br><br>
-            <input type="text" id="phone" placeholder="Your Phone" required><br><br>
-            <textarea id="message" rows="5" placeholder="Your Message" required></textarea><br><br>
+
+        <!-- Contact Form with FormSubmit + Redirect -->
+        <form action="https://formsubmit.co/researchscriptoria@gmail.com" method="POST">
+            <!-- Hidden field for selected service -->
+            <input type="hidden" name="Selected Service" id="selectedService" value="">
+            
+            <!-- Redirect after form submit -->
+            <input type="hidden" name="_next" value="https://yourusername.github.io/thankyou.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="text" name="name" id="name" placeholder="Your Name" required><br><br>
+            <input type="text" name="phone" id="phone" placeholder="Your Phone" required><br><br>
+            <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea><br><br>
             <button type="submit" class="submit-button">Send Message</button>
         </form>
+
         <p><strong>Phone:</strong> 7089151560</p>
         <p><strong>Address:</strong> Virtual Office</p>
     </section>
@@ -52,15 +62,36 @@
         <p>&copy; 2025 Research Scriptoria. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function selectService(service) {
+            document.getElementById("selectedService").value = service;
+            alert(service + " selected!");
+        }
+    </script>
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Research Scriptoria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Thank You!</h1>
+    <p>Your message has been successfully sent to <strong>Research Scriptoria</strong>. 🎓</p>
+  </header>
 
-<form action="https://formsubmit.co/your_email@example.com" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send</button>
-</form>
+  <section>
+    <p>We will get back to you shortly. Meanwhile, explore more about our services.</p>
+    <a href="index.html" class="back-button">⬅ Back to Home</a>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 Research Scriptoria. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
