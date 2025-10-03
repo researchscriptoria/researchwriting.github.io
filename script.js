@@ -1,53 +1,55 @@
-<!-- Include SweetAlert2 library in your HTML <head> -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<script>
-/* ===========================
-   Service Selection
-=========================== */
-function selectService(serviceName) {
-    Swal.fire({
-        title: 'Service Selected!',
-        text: `You chose: ${serviceName}`,
-        icon: 'success',
-        showConfirmButton: false,
-        timer: 2000,
-        background: '#f4f6f9',
-        color: '#2c3e50',
-        backdrop: `
-            rgba(0,0,0,0.4)
-            url("https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif")
-            left top
-            no-repeat
-        `
-    });
+<style>
+/* Custom popup styles */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+    z-index: 1000;
 }
 
-/* ===========================
-   Form Submission
-=========================== */
+.popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+<script>
+/* Function to show popup */
+function showPopup(message) {
+    // Create popup element
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerText = message;
+    document.body.appendChild(popup);
+
+    // Show popup
+    setTimeout(() => popup.classList.add('show'), 100);
+
+    // Hide and remove after 3 seconds
+    setTimeout(() => {
+        popup.classList.remove('show');
+        setTimeout(() => popup.remove(), 500);
+    }, 3000);
+}
+
+/* Service selection */
+function selectService(serviceName) {
+    showPopup(`✅ You selected: ${serviceName}`);
+}
+
+/* Form submission */
 function validateForm() {
-    // Optional: Add form validation here
-
-    Swal.fire({
-        title: 'Thank You!',
-        text: "Your message has been successfully sent.",
-        icon: 'success',
-        confirmButtonText: 'Close',
-        confirmButtonColor: '#4e54c8',
-        background: '#f4f6f9',
-        color: '#2c3e50',
-        showClass: {
-            popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-        }
-    });
-
+    showPopup('🎉 Thank you! Your message has been sent.');
     return false; // Prevent default form submission for demo
 }
 </script>
-
-<!-- Optional: Animate.css for smooth popup animations -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
