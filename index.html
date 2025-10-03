@@ -1,79 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Scriptoria</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <header>
-        <h1>Research Scriptoria</h1>
-        <p>Crafting Excellence in Every Word</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <button class="service-button" onclick="selectService('PhD Thesis')">PhD Thesis</button>
-            <button class="service-button" onclick="selectService('Master Thesis')">Master Thesis</button>
-            <button class="service-button" onclick="selectService('Dissertation')">Dissertation</button>
-            <button class="service-button" onclick="selectService('Article')">Article</button>
-            <button class="service-button" onclick="selectService('Research Article')">Research Article</button>
-            <button class="service-button" onclick="selectService('Scopus Level Paper')">Scopus Level Paper</button>
-            <button class="service-button" onclick="selectService('Review Paper')">Review Paper</button>
-            <button class="service-button" onclick="selectService('Literature Report')">Literature Report</button>
-            <button class="service-button" onclick="selectService('Assignment')">Assignment</button>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-
-        <!-- Contact Form with FormSubmit + Redirect -->
-        <form action="https://formsubmit.co/researchscriptoria@gmail.com" method="POST">
-            <!-- Hidden field for selected service -->
-            <input type="hidden" name="Selected Service" id="selectedService" value="">
-            
-            <!-- Redirect after form submit -->
-            <input type="hidden" name="_next" value="https://yourusername.github.io/thankyou.html">
-            <input type="hidden" name="_captcha" value="false">
-
-            <input type="text" name="name" id="name" placeholder="Your Name" required><br><br>
-            <input type="text" name="phone" id="phone" placeholder="Your Phone" required><br><br>
-            <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea><br><br>
-            <button type="submit" class="submit-button">Send Message</button>
-        </form>
-
-        <p><strong>Phone:</strong> 7089151560</p>
-        <p><strong>Address:</strong> Virtual Office</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Research Scriptoria. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        function selectService(service) {
-            document.getElementById("selectedService").value = service;
-            alert(service + " selected!");
-        }
-    </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You - Research Scriptoria</title>
@@ -93,12 +20,14 @@
     }
 
     .thankyou-box {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 40px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 30px;
       border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
       animation: fadeIn 1.2s ease-in-out;
+      max-width: 450px;
+      width: 90%;
     }
 
     .checkmark {
@@ -108,24 +37,26 @@
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin: 20px 0 10px;
+      font-size: 2rem;
+      margin: 15px 0 10px;
     }
 
     p {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
     .back-btn {
       display: inline-block;
-      padding: 12px 25px;
+      padding: 12px 20px;
       background: #00ff88;
       color: #000;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
+      font-size: 1rem;
     }
 
     .back-btn:hover {
@@ -140,8 +71,25 @@
 
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-15px); }
-      60% { transform: translateY(-8px); }
+      40% { transform: translateY(-12px); }
+      60% { transform: translateY(-6px); }
+    }
+
+    /* 📱 Mobile Responsive */
+    @media (max-width: 600px) {
+      .checkmark {
+        font-size: 50px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+      .back-btn {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+      }
     }
   </style>
 </head>
